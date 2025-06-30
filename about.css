@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url(image/image2.png) no-repeat center center / cover;
+  background-attachment: fixed;
+  padding: 50px 5%;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  border-radius: 30px;
+  backdrop-filter: blur(30px);
+  transform: scale(0);
+  animation: zoom-in 1s ease forwards;
+}
+
+@keyframes zoom-in {
+  100% {
+    transform: scale(1);
+  }
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.animated {
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slide-in 1s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes slide-in {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.logo {
+  font-size: 25px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navbar a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  border-bottom: 2px solid transparent;
+  transition: 0.5s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  border-color: #fff;
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: auto;
+  color: #fff;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-image {
+  margin-top: 8rem;
+  position: relative;
+  border: 1px solid #fff;
+  box-shadow: 0 0 20px #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.about-text {
+  text-align: center;
+}
+
+.about-image img {
+  width: 250px;
+  height: auto;
+  object-fit: cover;
+}
+
+.container h2,
+h3 {
+  -webkit-text-stroke: 1px #01ffff;
+  font-size: 30px;
+  text-align: center;
+}
+
+.container p {
+  text-align: center;
+  font-size: 15px;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.skills-list li {
+  color: #333;
+  background-color: #e2e2e2;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  width: calc(25% - 15px);
+  text-align: center;
+}
+
+.skills-list li:hover {
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #01ffff;
+  cursor: pointer;
+  box-shadow: 0 0 10px #01ffff;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  text-align: center;
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 10px #fff;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  color: #fff;
+  border: 1px solid #01ffff;
+  background-color: transparent;
+  box-shadow: 0 0 10px #01ffff;
+}
+
+/* --- Media Query untuk tata letak responsif --- */
+
+/* Untuk desktop dan layar besar lainnya */
+@media (min-width: 993px) {
+  body {
+    background: url(image/image2.png) no-repeat center center / cover;
+  }
+}
+
+/* Untuk layar tablet besar (lebar <= 992px) */
+@media (max-width: 992px) {
+  body {
+    background: url(image/image2.png) repeat center center / cover;
+  }
+  .skills-list li {
+    /* Ubah menjadi 3 kolom untuk layar tablet besar */
+    width: calc(33.33% - 15px);
+  }
+}
+
+/* Untuk layar tablet dan ponsel (lebar <= 768px) */
+@media (max-width: 768px) {
+  body {
+    background: url(image/image2.png) repeat center center / cover;
+  }
+  .skills-list li {
+    /* Ubah menjadi 2 kolom untuk layar tablet/ponsel */
+    width: calc(50% - 15px);
+  }
+}
+
+/* Untuk layar ponsel (lebar <= 576px) */
+@media (max-width: 576px) {
+  body {
+    background: url(image/image2.png) repeat center center / cover;
+  }
+  .skills-list li {
+    /* Ubah menjadi 1 kolom untuk layar ponsel */
+    width: 100%;
+  }
+}

@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: url(image/image2.png) no-repeat center center / cover;
+  background-attachment: fixed;
+  padding: 50px 5%;
+}
+
+/* Container */
+.container {
+  position: relative;
+  height: 100%;
+  border-radius: 30px;
+  backdrop-filter: blur(30px);
+  transform: scale(0);
+  animation: zoom-in 1s ease forwards;
+}
+
+@keyframes zoom-in {
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Header */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.animated {
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slide-in 1s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes slide-in {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Logo & Navbar */
+.logo {
+  font-size: 25px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navbar a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  border-bottom: 2px solid transparent;
+  transition: 0.5s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  border-color: #fff;
+}
+
+/* --- Portofolio Section --- */
+
+.portfolio-section {
+  padding: 80px 0;
+  background-color: transparent;
+  text-align: center;
+}
+
+.portfolio-section h2 {
+  -webkit-text-stroke: 1px #01ffff;
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px #fff;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- item-overlay & Animasi Hover --- */
+.item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.portfolio-item:hover .item-overlay {
+  opacity: 1;
+}
+
+.item-overlay h3 {
+  -webkit-text-stroke: 1px #01ffff;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.item-overlay p {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 20px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.project-links {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Animasi saat di-hover */
+.portfolio-item:hover .item-overlay h3 {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+
+.portfolio-item:hover .item-overlay p {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.portfolio-item:hover .item-overlay .project-links {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+
+/* --- Styling Tombol --- */
+.project-links .project-btn {
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 40px;
+  box-shadow: 0 0 10px #fff;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.project-links .project-btn:hover {
+  color: #fff;
+  border: 1px solid #01ffff;
+  background-color: transparent;
+  box-shadow: 0 0 10px #01ffff;
+}

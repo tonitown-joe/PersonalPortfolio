@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: url(image/image2.png) no-repeat center / cover;
+  padding: 50px 5%;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  backdrop-filter: blur(30px);
+  transform: scale(0);
+  animation: zoom-in 1s ease forwards;
+}
+
+@keyframes zoom-in {
+  100% {
+    transform: scale(1);
+  }
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.animated {
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slide-in 1s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes slide-in {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.logo {
+  font-size: 25px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navbar a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  border-bottom: 2px solid transparent;
+  transition: 0.5s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  border-color: #fff;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 50px;
+  padding: 50px 5% 0;
+  color: #fff;
+  animation-delay: 1.5s;
+}
+
+.home-detail h1 {
+  color: transparent;
+  font-size: 55px;
+  -webkit-text-stroke: 2px #01ffff;
+}
+
+.home-detail h2 {
+  font-size: 32px;
+}
+
+.home-detail span {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 0.7px #01ffff;
+  animation: display-text 16s linear infinite;
+  animation-delay: calc(-4s * var(--i));
+}
+
+.home-detail span::before {
+  content: attr(data-text);
+  position: absolute;
+  width: 0;
+  border-right: 5px solid #01ffff;
+  color: #01ffff;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: fill-text 4s linear infinite;
+}
+
+@keyframes fill-text {
+  10%,
+  100% {
+    width: 0;
+  }
+  70%,
+  90% {
+    width: 100%;
+  }
+}
+
+@keyframes display-text {
+  25%,
+  100% {
+    display: none;
+  }
+}
+
+.home-detail p {
+  margin: 10px 0 20px;
+}
+
+.home-detail .download-social {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 30px;
+  background: #fff;
+  border: 2px solid #fff;
+  border-radius: 40px;
+  box-shadow: 0 0 10px #fff;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  border: 2px solid #01ffff;
+  background: transparent;
+  box-shadow: 0 0 10px #01ffff;
+  color: #fff;
+}
+
+.home-detail .social-icons {
+  margin-left: 20px;
+}
+
+.home-detail .social-icons a {
+  display: inline-flex;
+  padding: 8px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #01ffff;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: 0.5s;
+}
+
+.home-detail .social-icons a:hover {
+  /* background: #fff; */
+  box-shadow: 0 0 15px #01ffff;
+  color: white;
+  border: 2px solid #01ffff;
+}
+
+.home-img .img-box {
+  position: relative;
+  width: 28vw;
+  height: 28vw;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #01ffff;
+  overflow: hidden;
+}
+
+.home-img .img-box img {
+  position: relative;
+  right: 15%;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* --- Media Query untuk tata letak responsif --- */
+
+/* Untuk desktop dan layar besar lainnya */
+@media (min-width: 993px) {
+  body {
+    background: url(image/image2.png) no-repeat center center / cover;
+  }
+}
+
+/* Untuk layar tablet besar (lebar <= 992px) */
+@media (max-width: 992px) {
+  body {
+    background: url(image/image2.png) repeat center center / cover;
+  }
+  .skills-list li {
+    /* Ubah menjadi 3 kolom untuk layar tablet besar */
+    width: calc(33.33% - 15px);
+  }
+}
+
+/* Untuk layar tablet dan ponsel (lebar <= 768px) */
+@media (max-width: 768px) {
+  body {
+    background: url(image/image2.png) repeat center center / cover;
+  }
+  .skills-list li {
+    /* Ubah menjadi 2 kolom untuk layar tablet/ponsel */
+    width: calc(50% - 15px);
+  }
+}
+
+/* Untuk layar ponsel (lebar <= 576px) */
+@media (max-width: 576px) {
+  body {
+    background: url(image/image2.png) repeat center center / cover;
+  }
+  .skills-list li {
+    /* Ubah menjadi 1 kolom untuk layar ponsel */
+    width: 100%;
+  }
+}

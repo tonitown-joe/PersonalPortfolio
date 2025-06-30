@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="animated">
+        <a href="index.html" class="logo">Portfolio</a>
+
+        <nav class="navbar">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="service.html">Service</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <div class="container-form">
+        <div id="contact" class="contact-setion">
+          <h2>Hubungi Saya</h2>
+          <form action="#" method="POST">
+            <div class="form-group">
+              <label for="nama">Nama Lengkap</label>
+              <input type="text" id="nama" name="nama" placeholder="Isi Nama Anda..." required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Isi Email Anda..." required />
+            </div>
+            <div class="form-group">
+              <label for="telepon">Telepon</label>
+              <input type="tel" id="telepon" placeholder="Isi Nomor Anda..." required />
+            </div>
+            <div class="form-group">
+                <label for="pesan">Pesan Anda</label>
+                <textarea type="message" name="pesan" id="pesan" rows="5" cols="50" placeholder="Tulis Pesan Anda di sini..."></textarea>
+            </div>
+            <button type="submit">Kirim</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
