@@ -17,7 +17,7 @@ body {
   position: relative;
   height: 100%;
   border-radius: 30px;
-  backdrop-filter: blur(30px); 
+  backdrop-filter: blur(30px);
   transform: scale(0);
   animation: zoom-in 1s ease forwards;
 }
@@ -74,6 +74,23 @@ header {
 .navbar a:hover,
 .navbar a.active {
   border-color: #fff;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  z-index: 1001;
+  color: #fff;
+}
+
+.menu-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: currentColor;
+}
+
+.menu-icon .icon-close {
+  display: none;
 }
 
 /* Service-Section */
@@ -133,4 +150,64 @@ header {
   font-size: 1rem;
   color: #01eeff;
   line-height: 1.6;
+}
+
+/* --- Media Query untuk tata letak responsif --- */
+
+/* Untuk tablet dan mobile */
+@media (max-width: 991px) {
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .navbar a {
+    display: block;
+    margin: 0;
+    padding: 1rem 5%;
+    font-size: 20px;
+    border-bottom: none;
+  }
+
+  .navbar a:hover,
+  .navbar a:active {
+    color: #00bcd4;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .header-active .menu-icon .icon-menu {
+    display: none;
+  }
+
+  .header-active .menu-icon .icon-close {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 20px 3%;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
 }

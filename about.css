@@ -78,6 +78,24 @@ header {
   border-color: #fff;
 }
 
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  z-index: 1001;
+  color: #fff;
+}
+
+.menu-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: currentColor;
+}
+
+.menu-icon .icon-close {
+  display: none;
+}
+
+
 .about-section {
   display: flex;
   align-items: center;
@@ -178,42 +196,60 @@ h3 {
 
 /* --- Media Query untuk tata letak responsif --- */
 
-/* Untuk desktop dan layar besar lainnya */
-@media (min-width: 993px) {
-  body {
-    background: url(image/image2.png) no-repeat center center / cover;
-  }
-}
-
-/* Untuk layar tablet besar (lebar <= 992px) */
-@media (max-width: 992px) {
-  body {
-    background: url(image/image2.png) repeat center center / cover;
-  }
-  .skills-list li {
-    /* Ubah menjadi 3 kolom untuk layar tablet besar */
-    width: calc(33.33% - 15px);
-  }
-}
-
-/* Untuk layar tablet dan ponsel (lebar <= 768px) */
-@media (max-width: 768px) {
-  body {
-    background: url(image/image2.png) repeat center center / cover;
-  }
-  .skills-list li {
-    /* Ubah menjadi 2 kolom untuk layar tablet/ponsel */
-    width: calc(50% - 15px);
-  }
-}
-
-/* Untuk layar ponsel (lebar <= 576px) */
-@media (max-width: 576px) {
-  body {
-    background: url(image/image2.png) repeat center center / cover;
-  }
-  .skills-list li {
-    /* Ubah menjadi 1 kolom untuk layar ponsel */
+/* Untuk tablet dan mobile */
+@media (max-width: 991px) {
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar.active {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.navbar a {
+  display: block;
+  margin: 0;
+  padding: 1rem 5%;
+  font-size: 20px;
+  border-bottom: none;
+}
+
+.navbar a:hover,
+.navbar a:active {
+  color: #00bcd4;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-icon {
+  display: block;
+}
+
+.header-active .menu-icon .icon-menu {
+  display: none;
+} 
+
+.header-active .menu-icon .icon-close {
+  display: block;
+}
+}
+
+@media (max-width: 768px) { 
+  header {
+    padding: 20px 3%; 
+  }
+
+  .logo {
+    font-size: 22px;
   }
 }
